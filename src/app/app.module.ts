@@ -19,6 +19,8 @@ import { ManageUsersComponent } from './admin/manage-users/manage-users.componen
 import { NewTransactionComponent } from './pages/new-transaction/new-transaction.component';
 import { LightInfoComponent } from './components/light-info/light-info.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { MenuComponent } from './components/menu/menu.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
