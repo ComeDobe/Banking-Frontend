@@ -19,9 +19,11 @@ import { NewTransactionComponent } from './pages/new-transaction/new-transaction
 import { LightInfoComponent } from './components/light-info/light-info.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-
-
+import { CommonModule, DatePipe} from '@angular/common';
+import { DatepickerModule } from 'ng2-datepicker';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {HttpInterceptorService} from "./services/http-interceptor/http-interceptor.service";
+// import {DpDatePickerModule} from 'ng2-date-picker';
 
 
 
@@ -50,9 +52,23 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DatepickerModule,
+    // DatepickerModule.forRoot({}),
+    // DpDatePickerModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
+    HttpClient,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
