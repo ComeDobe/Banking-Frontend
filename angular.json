@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Banking-Frontend:build:production"
+              "buildTarget": "Banking-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "Banking-Frontend:build:development"
+              "buildTarget": "Banking-Frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Banking-Frontend:build"
+            "buildTarget": "Banking-Frontend:build"
           }
         },
         "test": {
