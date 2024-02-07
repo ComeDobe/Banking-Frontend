@@ -54,8 +54,6 @@ import {HttpInterceptorService} from "./services/http-interceptor/http-intercept
     FormsModule,
     AppRoutingModule,
     DatepickerModule,
-    // DatepickerModule.forRoot({}),
-    // DpDatePickerModule,
     HttpClientModule
 
   ],
