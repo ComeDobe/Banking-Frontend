@@ -132,8 +132,8 @@ export class UserDashboardComponent implements OnInit {
   private accountBalance = 0;
   private highestTransfer = 0;
   private highestDeposit = 0;
-  chartType: ChartType = 'line'; // Ceci est correct
-  chartData: ChartData<'line'> = { // Ajusté pour la structure correcte
+  chartType: ChartType = 'line';
+  chartData: ChartData<'line'> = {
     labels: [],
     datasets: []
   };
@@ -168,7 +168,6 @@ export class UserDashboardComponent implements OnInit {
     }).subscribe({
       next: (values) => {
         console.log(values);
-        // Reset labels and datasets
         this.chartData.labels = [];
         this.chartData.datasets = [{
           data: [],
