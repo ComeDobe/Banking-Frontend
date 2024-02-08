@@ -168,6 +168,7 @@ export class UserDashboardComponent implements OnInit {
     }).subscribe({
       next: (values) => {
         console.log(values);
+        // Reset labels and datasets
         this.chartData.labels = [];
         this.chartData.datasets = [{
           data: [],

@@ -19,7 +19,7 @@ export class AdminGuardService implements CanActivate{
     const token = localStorage.getItem('token');
     if (token) {
       const helper = new JwtHelperService();
-      // @ts-ignore
+
       const decodedToken = helper.decodeToken(token);
       if (decodedToken.authorities[0].authority !== 'ROLE_ADMIN') {
         this.router.navigate(['access-denied']);

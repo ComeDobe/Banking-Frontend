@@ -16,6 +16,8 @@ import { ConfirmRegisterComponent } from './pages/confirm-register/confirm-regis
 import { TokenGuardService } from './services/guard/token-guard/token-guard.service';
 import { AdminGuardService } from './services/guard/admin-guard/admin-guard.service';
 import { AccessDeinedComponent } from './pages/access-deined/access-deined.component';
+
+
 const routes: Routes = [
 
   {
@@ -96,6 +98,12 @@ const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full'
       }
+
+      // {
+      //   path: '',
+      //   redirectTo: 'login',
+      //   pathMatch: 'full'
+      // }
     ]
   }
 ];
