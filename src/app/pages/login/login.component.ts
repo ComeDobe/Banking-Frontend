@@ -24,6 +24,31 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // login() {
+  //   this.errorMessages = [];
+  //   this.authService.authenticate({
+  //     body: this.authRequest
+  //   }).subscribe({
+  //     next: async (data) => {
+  //       localStorage.setItem('token', data.token as string);
+  //       const helper = new JwtHelperService();
+  //       if (data.token != null) {
+  //         const decodedToken = helper.decodeToken(data.token);
+  //       }
+  //       if (this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
+  //         await this.router.navigate(['admin/dashboard']);
+  //       } else {
+  //         await this.router.navigate(['user/dashboard']);
+  //       }
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //       this.errorMessages.push(err.error.errorMessage);
+  //     }
+  //   });
+  // }
+
+
   login() {
     this.errorMessages = [];
     this.authService.authenticate({
@@ -33,12 +58,12 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', data.token as string);
         const helper = new JwtHelperService();
         if (data.token != null) {
-          const decodedToken = helper.decodeToken(data.token);
-        }
-        if (this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
-          await this.router.navigate(['admin/dashboard']);
-        } else {
-          await this.router.navigate(['user/dashboard']);
+          this.decodedToken = helper.decodeToken(data.token);
+          if (this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
+            await this.router.navigate(['admin/dashboard']);
+          } else {
+            await this.router.navigate(['user/dashboard']);
+          }
         }
       },
       error: (err) => {
@@ -48,7 +73,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
+
   async register() {
     await this.router.navigate(['register']);
   }
+
 }

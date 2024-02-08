@@ -20,6 +20,26 @@ import { AccessDeinedComponent } from './pages/access-deined/access-deined.compo
 
 const routes: Routes = [
 
+  // {
+  //   path: '',
+  //   redirectTo: 'user/dashboard',
+  //   pathMatch: 'full'
+  // },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
+
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+
   {
     path: 'login',
     component: LoginComponent
@@ -93,15 +113,15 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent
       },
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-      }
+      // {
+      //   path: '',
+      //   redirectTo: 'dashboard',
+      //   pathMatch: 'full'
+      // }
 
       // {
       //   path: '',
-      //   redirectTo: 'login',
+      //   redirectTo: 'main-page',
       //   pathMatch: 'full'
       // }
     ]
