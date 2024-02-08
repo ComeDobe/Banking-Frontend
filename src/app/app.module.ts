@@ -20,11 +20,16 @@ import { LightInfoComponent } from './components/light-info/light-info.component
 import { MenuComponent } from './components/menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, DatePipe} from '@angular/common';
-import { DatepickerModule } from 'ng2-datepicker';
+// import { DatepickerModule } from 'ng2-datepicker';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import {HttpInterceptorService} from "./services/http-interceptor/http-interceptor.service";
 
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -53,7 +58,13 @@ import {HttpInterceptorService} from "./services/http-interceptor/http-intercept
     CommonModule,
     FormsModule,
     AppRoutingModule,
-    DatepickerModule,
+    // DatepickerModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgChartsModule,
     HttpClientModule
 
   ],
