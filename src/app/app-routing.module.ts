@@ -113,11 +113,11 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent
       },
-      // {
-      //   path: '',
-      //   redirectTo: 'dashboard',
-      //   pathMatch: 'full'
-      // }
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }
 
       // {
       //   path: '',
