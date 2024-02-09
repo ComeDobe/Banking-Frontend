@@ -59,11 +59,21 @@ export class LoginComponent implements OnInit {
         const helper = new JwtHelperService();
         if (data.token != null) {
           this.decodedToken = helper.decodeToken(data.token);
-          if (this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
+          // if (this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
+          //   await this.router.navigate(['admin/dashboard']);
+          // } else {
+          //   await this.router.navigate(['user/dashboard']);
+          // }
+
+          if (this.decodedToken.authorities && this.decodedToken.authorities.length > 0 && this.decodedToken.authorities[0].authority === 'ROLE_ADMIN') {
             await this.router.navigate(['admin/dashboard']);
           } else {
             await this.router.navigate(['user/dashboard']);
           }
+
+
+
+
         }
       },
       error: (err) => {
