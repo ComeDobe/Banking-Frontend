@@ -34,7 +34,7 @@ export class FirstService {
 
   findAllTransactionsV2(): Observable<Array<TransactionDto>> {
     let _headers: HttpHeaders = new HttpHeaders();
-    _headers = _headers.set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJteXVzZXJAZ21haWwuY29tIiwiZXhwIjoxNjY1NDQwMjM5LCJpYXQiOjE2NjQ3MjAyMzksImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV19.UVs4VclebetFTiTg8tB7v7USQ6MSHfS_iStTAze9QFk');
+    _headers = _headers.set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21lLnBpbmFAZ21haWwuY29tIiwiZnVsbE5hbWUiOiJDaHJpc3RpYW4gRG9iZSIsImV4cCI6MTcwODI0MjA3OCwidXNlcklkIjoxLCJpYXQiOjE3MDc1MjIwNzgsImF1dGhvcml0aWVzIjpbXX0.JSbvELLZw3ViOE-iDBu34cYTbv45AneSD1vhFBGr0PQ');
     return this.httpClient.get(
       this.rootUrl + '/transactions/',
       {
