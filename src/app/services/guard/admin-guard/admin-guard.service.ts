@@ -1,3 +1,5 @@
+
+
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -19,14 +21,16 @@ export class AdminGuardService implements CanActivate{
     const token = localStorage.getItem('token');
     if (token) {
       const helper = new JwtHelperService();
-
       const decodedToken = helper.decodeToken(token);
-      if (decodedToken.authorities[0].authority !== 'ROLE_ADMIN') {
+      if (!decodedToken.authorities || decodedToken.authorities.length === 0 || decodedToken.authorities[0].authority !== 'ROLE_ADMIN') {
         this.router.navigate(['access-denied']);
-        return false
+        return false;
       }
+
       return true;
     }
+    this.router.navigate(['login']);
     return false;
   }
 }
+
