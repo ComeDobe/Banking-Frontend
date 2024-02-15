@@ -52,6 +52,8 @@ const routes: Routes = [
     path: 'confirm-register',
     component: ConfirmRegisterComponent
   },
+  {path: 'user'},
+  {path: 'admin'},
   {
     path: 'access-denied',
     component: AccessDeinedComponent
@@ -119,11 +121,6 @@ const routes: Routes = [
         pathMatch: 'full'
       }
 
-      // {
-      //   path: '',
-      //   redirectTo: 'main-page',
-      //   pathMatch: 'full'
-      // }
     ]
   }
 ];
