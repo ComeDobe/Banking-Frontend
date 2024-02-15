@@ -29,7 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ChartsModule } from 'ng2-charts';
+// import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -64,7 +64,7 @@ import { ChartsModule } from 'ng2-charts';
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    ChartsModule,
+    // NgChartsModule,
     HttpClientModule
 
   ],
