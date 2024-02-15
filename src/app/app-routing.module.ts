@@ -20,15 +20,15 @@ import { AccessDeinedComponent } from './pages/access-deined/access-deined.compo
 
 const routes: Routes = [
 
-  // {
-  //   path: '',
-  //   redirectTo: 'user/dashboard',
-  //   pathMatch: 'full'
-  // },
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // },
+  {
+    path: '',
+    redirectTo: 'user/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
 
   {
     path: '',
@@ -52,8 +52,8 @@ const routes: Routes = [
     path: 'confirm-register',
     component: ConfirmRegisterComponent
   },
-  {path: 'user'},
-  {path: 'admin'},
+  // {path: 'user'},
+  // {path: 'admin'},
   {
     path: 'access-denied',
     component: AccessDeinedComponent
